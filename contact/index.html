@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand1 non-display" href="#">
+                <img class="logo" src="../img/logo-dark-01.png" alt="">
+            </a>
+            <div class="dropdown search-responsive">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="../img/loupe.svg" alt="">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="width: 100%">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="/">TRANG CHỦ<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="../introduction/">GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../information/">DỊCH VỤ</a>
+                    </li>
+                    <a class="navbar-brand" href="#">
+                        <img class="logo" src="../img/logo-dark-01.png" alt="">
+                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../price/">BẢNG GIÁ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./">LIÊN HỆ</a>
+                    </li>
+                    <li>
+                        <div class="dropdown search">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="../img/loupe.svg" alt="">
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="content">
+        <div class="bg1">
+            <h1>Liên hệ</h1>
+            <p>Trang chủ / <b>Liên hệ</b></p>
+        </div>
+        <div id="contact-bkcse" class="container-fluid bg-grey mt-5">
+            <div class="row">
+                <div class="col-md-6" id="googleMap" style="height:400px; width:100%;"></div>
+    
+                <div class="col-sm-5 d-flex flex-wrap justify-content-between align-items-center ml-2 mt-3">
+                    <div class="location">
+                        <div class="location-icon"></div>
+                        <h2>Địa điểm</h2>
+                        <p>268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh</p>
+                    </div>
+                    <div class="phone">
+                        <div class="phone-icon"></div>
+                        <h2>Số điện thoại</h2>
+                        <p>0123123123</p>
+                    </div>
+                    <div class="mail">
+                        <div class="mail-icon"></div>
+                        <h2>Địa chỉ Email</h2>
+                        <p>support@bkcse.com</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-sm-7 slideamin">
+                    <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Tên " type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="phone" name="tel-contact" placeholder="Số điện thoại" type="tel" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="addresses" name="addresses" placeholder="Địa chỉ" type="text" required>
+                    </div>
+                    </div>
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Lời nhắn" rows="5"></textarea>
+                    <div id="button-row" class="row">
+                    <div class="col-sm-12 form-group text-center">
+                        <button type="submit" class="btn btn-success mt-3">Gửi</button>
+                    </div>
+                </div>
+              </div>
+            </div>  
+        </div>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script>
+            var myCenter = new google.maps.LatLng(10.77334945, 106.65963187);
+      
+            function initialize() {
+              var mapProp = {
+                center: myCenter,
+                zoom:12,
+                scrollwheel:true,
+                draggable:true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+              };
+              var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      
+              var marker = new google.maps.Marker({
+                position: myCenter,
+              });
+              marker.setMap(map);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </div>
+    
+
+    <div class="footer">
+        <div class="container-fluid" id="bfgg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="row">
+                            <div class="col-3 col-sm-12 col-lg-3 icon3col">
+                                <img src="../img/footer/ic1.PNG" alt="ic1" class="lg1">
+                            </div>
+                            <div class="col-9 col-sm-12 col-lg-9 text3col">
+                                <h5>GỌI NGAY CHO CHÚNG TÔI</h5>
+                                <p>0123 456 789</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row">
+                            <div class="col-3 col-sm-12 col-lg-3 icon3col">
+                                <img src="../img/footer/ic2.PNG" alt="ic2" class="lg1">
+                            </div>
+                            <div class="col-9 col-sm-12 col-lg-9 text3col">
+                                <h5>320 17C LÝ THƯỜNG KIỆT</h5>
+                                <p>Phường 15, Quận 11, TP.HCM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row">
+                            <div class="col-3 col-sm-12 col-lg-3 icon3col">
+                                <img src="../img/footer/ic3.PNG" alt="ic3" class="lg1">
+                            </div>
+                            <div class="col-9 col-sm-12 col-lg-9 text3col">
+                                <h5>EMAIL</h5>
+                                <p>A1234321Ag@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row mt-3">
+                <div class="footer3 col">
+                    <p class="gioithieu">
+                        Giới thiệu về chúng tôi
+                    </p>
+                    <p class="content-footer">
+                        Chúng tôi mang đến dịch vụ vệ sinh, chuyển đồ và cho thuê với giá cả hợp lí, nhanh gọn và hiệu quả. Giải quyết vấn đề trong thời gian sớm nhất. <a href="../introduction/">Xem thêm</a>
+                    </p>
+                </div>
+                <div class="footer1 col">
+                    <p class="banggia">
+                        Bảng giá của chúng tôi
+                    </p>
+                    <p class="content-footer">
+                        Nếu bạn muốn tham khảo giá, <a href="../contact">nhấn vào đây</a> sẽ có nhiều mức giá mà chúng tôi luôn cập nhật thường xuyên nhất.
+                    </p>
+                </div>
+                <div class="footer2 col">
+                    <p class="lienhe">
+                        Liên hệ với chúng tôi
+                    </p>
+                    <p class="content-footer">
+                        Nếu bạn muốn sử dụng dịch vụ hay cần chúng tôi tư vấn, hãy gọi ngay cho chúng tôi hoặc liên hệ chúng tôi qua nhiều hình thức khác. <a href="../contact">Nhấn vào đây</a>
+                    </p>
+                </div>
+                <div class="footer4 col">
+                    <p class="dichvufooter">
+                        Dịch vụ cung cấp
+                    </p>
+                    <p class="content-footer">
+                        <ul>
+                            <li>Dịch vụ vệ sinh nhà</li>
+                            <li>Dịch vụ chuyển nhà</li>
+                            <li>Dịch vụ vệ sinh ghế sofa</li>
+                            <li>Dịch vụ vệ sinh nhà xưởng</li>
+                            <li>Dịch vụ vệ sinh nhà kho</li>
+                            <li>Dịch vụ vệ sinh sau xây dựng</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
